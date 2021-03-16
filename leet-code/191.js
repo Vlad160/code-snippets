@@ -1,0 +1,3 @@
+var hammingWeight = function(n) {
+   
+};
