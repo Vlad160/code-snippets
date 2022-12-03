@@ -1,5 +1,3 @@
-const { resolve } = require("node:path");
-
 const cycle = {
   val: 3,
   next: {
@@ -30,28 +28,3 @@ var hasCycle = function (head) {
 };
 
 console.log(hasCycle(cycle));
-
-function check(timeout = 1000, attempts = 10) {
-  let res, rej;
-
-  const promise = new Promise((resolve, reject) => {
-    res = resolve;
-    rej = reject;
-  });
-
-  function checkWootric(attempt) {
-    const wootricScore = document.getElementById("wootric-score");
-
-    if (!wootricScore) {
-      if (attempt === 0) {
-        return rej("No wootric");
-      }
-      setTimeout(checkWootric, timeout, attempt - 1);
-    } else {
-      res(wootricScore);
-    }
-  }
-  checkWootric(attempts);
-
-  return promise;
-}
