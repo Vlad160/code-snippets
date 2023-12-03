@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "csv-reader": "^1.0.12",
+    "csv-writer": "^1.6.0",
+    "docx": "^8.0.4",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^3.6.172"
+  }
+}
