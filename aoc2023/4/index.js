@@ -108,7 +108,6 @@ function sum(numbers) {
 
 function calculateCards(cards) {
     const copies = { 0: 1 };
-    let result = 0;
     for (let i = 0; i < cards.length; i++) {
         const card = cards[i];
         if (copies[i] === undefined) {
@@ -135,4 +134,3 @@ function puzzle2() {
     const cards = parseData(text.split("\n").map((l) => l.trim()));
     return calculateCards(cards);
 }
-console.log(puzzle2());
