@@ -53,18 +53,11 @@ function puzzle1(lines) {
 
 function puzzle2(lines) {
     const data = parseData(lines);
-    let result = 1;
     const time = +data.time.join("");
     const distance = +data.distance.join("");
     const [x1, x2] = quadraticEquation(1, -time, distance);
     let r = Math.floor(x2) - Math.ceil(x1);
-    const minDistance = x1 * (time - x1);
-    if (minDistance >= distance) {
-        r += 1;
-    } else {
-        r -= 1;
-    }
-    return r;
+    return r + 1;
 }
 
 console.log(puzzle2(lines));
