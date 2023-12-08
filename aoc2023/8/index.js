@@ -34,39 +34,6 @@ function navigate(data) {
     return step;
 }
 
-function performStep(currentPoint, mapping, rotation) {
-    return mapping[currentPoint][rotation];
-}
-
-function navigateMultiple(data) {
-    let step = 0;
-    let rotationIndex = 0;
-    const { directions, mapping } = data;
-    const points = Object.keys(mapping).filter((key) => key.endsWith("A"));
-    const directionsLen = directions.length;
-    const pointsLen = points.length;
-    while (true) {
-        const rotation = directions[rotationIndex];
-        let endsWithZ = 0;
-        for (let i = 0; i < pointsLen; i++) {
-            const newPoint = performStep(points[i], mapping, rotation);
-            if (newPoint.endsWith("Z")) {
-                endsWithZ++;
-            }
-            points[i] = newPoint;
-        }
-        rotationIndex = (rotationIndex + 1) % directionsLen;
-        step++;
-        if (endsWithZ > 2) {
-            console.log(endsWithZ);
-        }
-        if (endsWithZ === pointsLen) {
-            break;
-        }
-    }
-    return step;
-}
-
 function navigatePoint(start, directions, mapping) {
     let step = 0;
     let rotationIndex = 0;
