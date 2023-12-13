@@ -1,4 +1,3 @@
-const { group } = require("console");
 const fs = require("fs");
 const text = fs.readFileSync("./data.txt", { encoding: "utf-8" });
 const lines = text.split("\n").map((l) => l.trim());
